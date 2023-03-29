@@ -1,0 +1,13 @@
+# binaries
+**/bin/
+bin-int/
+
+# VS files and folders
+.vs/
+**.sln
+**.vcxproj
+**.vcxproj.filters
+**.vcxproj.user
+
+# personal
+*.ini

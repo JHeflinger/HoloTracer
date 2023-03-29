@@ -57,17 +57,17 @@ namespace HoloLib {
             m_OutputStream << "\"ts\":" << result.Start;
             m_OutputStream << "}";
 
-            m_OutputStream.HLush();
+            m_OutputStream.flush();
         }
 
         void WriteHeader() {
             m_OutputStream << "{\"otherData\": {},\"traceEvents\":[";
-            m_OutputStream.HLush();
+            m_OutputStream.flush();
         }
 
         void WriteFooter() {
             m_OutputStream << "]}";
-            m_OutputStream.HLush();
+            m_OutputStream.flush();
         }
 
         static Instrumentor& Get() {

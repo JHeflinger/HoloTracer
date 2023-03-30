@@ -14,7 +14,13 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 -- Include directories relative to root folder (solution directory)
 IncludeDir = {}
 IncludeDir["ImGui"] = "HoloLib/vendor/imgui"
+IncludeDir["GLFW"] = "HoloLib/vendor/GLFW/include"
+IncludeDir["Glad"] = "HoloLib/vendor/Glad/include"
+IncludeDir["glm"] = "HoloLib/vendor/glm"
+IncludeDir["stb_image"] = "HoloLib/vendor/stb_image"
 
+include "HoloLib/vendor/GLFW"
+include "HoloLib/vendor/Glad"
 include "HoloLib/vendor/imgui"
 
 project "HoloLib"
@@ -33,7 +39,11 @@ project "HoloLib"
 	files
 	{
 		"%{prj.name}/src/**.h",
-		"%{prj.name}/src/**.cpp"
+		"%{prj.name}/src/**.cpp",
+		"%{prj.name}/vendor/stb_image/**.h",
+		"%{prj.name}/vendor/stb_image/**.cpp",
+		"%{prj.name}/vendor/glm/glm/**.hpp",
+		"%{prj.name}/vendor/glm/glm/**.inl"
 	}
 
 	defines
@@ -45,12 +55,19 @@ project "HoloLib"
 	{
 		"%{prj.name}/src",
 		"%{prj.name}/vendor/spdlog/include",
-		"%{IncludeDir.ImGui}"
+		"%{IncludeDir.GLFW}",
+		"%{IncludeDir.Glad}",
+		"%{IncludeDir.ImGui}",
+		"%{IncludeDir.glm}",
+		"%{IncludeDir.stb_image}"
 	}
 
 	links 
 	{ 
-		"ImGui"
+		"GLFW",
+		"Glad",
+		"ImGui",
+		"opengl32.lib"
 	}
 
 	filter "system:windows"
@@ -96,6 +113,7 @@ project "HoloTracer"
 	{
 		"HoloLib/vendor/spdlog/include",
 		"HoloLib/src",
+		"%{IncludeDir.glm}",
 		"HoloLib/vendor"
 	}
 

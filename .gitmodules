@@ -4,3 +4,9 @@
 [submodule "HoloLib/vendor/imgui"]
 	path = HoloLib/vendor/imgui
 	url = https://github.com/JHeflinger/imgui.git
+[submodule "HoloLib/vendor/glfw"]
+	path = HoloLib/vendor/glfw
+	url = https://github.com/JHeflinger/glfw
+[submodule "HoloLib/vendor/glm"]
+	path = HoloLib/vendor/glm
+	url = https://github.com/g-truc/glm

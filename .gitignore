@@ -11,3 +11,4 @@ bin-int/
 
 # personal
 *.ini
+*.code-workspace

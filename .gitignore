@@ -12,3 +12,6 @@ bin-int/
 # personal
 *.ini
 *.code-workspace
+
+# pipenv
+PythonPrototyping/Pipfile.lock
